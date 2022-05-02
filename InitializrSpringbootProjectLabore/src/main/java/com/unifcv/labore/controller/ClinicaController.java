@@ -2,6 +2,7 @@ package com.unifcv.labore.controller;
 
 import com.unifcv.labore.model.Clinica;
 import com.unifcv.labore.repository.ClinicaRepository;
+import com.unifcv.labore.service.ClinicaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
@@ -28,16 +29,19 @@ public class ClinicaController {
     @Autowired
     private ClinicaRepository clinicaRepository;
 
+    @Autowired
+    private ClinicaService clinicaService;
+    
     @GetMapping("/{id}")
     @ApiOperation(value="Retorna um clinica por ID")
-    public Clinica findById(@PathVariable Integer id) {
-        return clinicaRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-    }
+    public Clinica findById(@PathVariable Integer id){
+        return clinicaService.ProcurarPorId(id);
+    }  
 
     @GetMapping("/")
     @ApiOperation(value="Retorna uma lista de Clinicas")
-    public List<Clinica> findAll() {
-        return clinicaRepository.findAll();
+    public List<Clinica> findAll(Clinica clinica) {
+        return clinicaService.Listar(clinica);
     }
 
     @PostMapping
@@ -47,6 +51,8 @@ public class ClinicaController {
         return clinicaRepository.save(clinica);
     }
 
+    
+    //---------------------------------------------//
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation(value="Atualiza um Clinica por ID")
