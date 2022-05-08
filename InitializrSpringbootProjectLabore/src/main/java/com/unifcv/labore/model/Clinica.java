@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,16 +21,19 @@ public class Clinica {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_clinica")
+    @Column(name = "id_clinica", nullable = false)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column( nullable = false)
+    @NotEmpty(message="O campo Nome deve ser preenchido.")
     private String nome;
 
     @Column(name="cnpj", length = 25, nullable = false)
+    @NotEmpty(message="O campo Cnpj deve ser preenchido.")
     private String cnpj;
 
-    @Column(nullable = false)
+    @Column( nullable = false)
+    @NotEmpty(message="O campo Endereço deve ser preenchido.")
     private String endereco;
     
 }

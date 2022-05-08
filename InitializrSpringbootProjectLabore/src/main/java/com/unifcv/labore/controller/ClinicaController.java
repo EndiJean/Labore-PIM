@@ -6,6 +6,8 @@ import com.unifcv.labore.service.ClinicaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
+import java.util.Optional;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,56 +24,54 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/unifcv/clinica")
-@Api(value="Labore+ API")
+@Api(value="Labore+ API - Clinica")
 @CrossOrigin(origins = "*")
 public class ClinicaController {
 
     @Autowired
-    private ClinicaRepository clinicaRepository;
-
-    @Autowired
     private ClinicaService clinicaService;
     
-    @GetMapping("/{id}")
-    @ApiOperation(value="Retorna um clinica por ID")
+    //OK
+    @GetMapping("/id/{id}")
+    @ApiOperation(value="Retorna um Clínica por ID.")
     public Clinica findById(@PathVariable Integer id){
-        return clinicaService.ProcurarPorId(id);
+        return clinicaService.procurarPorId(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ID Não Encontrado."));
     }  
+    
+    //OK
+    @GetMapping("/nome/{nome}")
+    @ApiOperation(value="Retorna uma Clínica por nome.")
+    public Clinica findByNome(@PathVariable String nome){
+        return clinicaService.procurarPorNome(nome).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nome Não Encontrado."));
+    }
 
+    //OK
     @GetMapping("/")
-    @ApiOperation(value="Retorna uma lista de Clinicas")
-    public List<Clinica> findAll(Clinica clinica) {
-        return clinicaService.Listar(clinica);
+    @ApiOperation(value="Retorna uma Lista de Clínicas.")
+    public List<Clinica> findAll() {
+        return clinicaService.listar();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @ApiOperation(value="Salva uma Clinica")
-    public Clinica SalvarClinica(@RequestBody Clinica clinica) {
-        return clinicaRepository.save(clinica);
+    @ApiOperation(value="Salva uma Clinica.")
+    public Clinica SaveClinica(@RequestBody @Valid Clinica clinica) {
+        return clinicaService.salvar(clinica);
     }
-
     
-    //---------------------------------------------//
-    @PutMapping("{id}")
+    
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value="Atualiza um Clinica por ID")
-    public void UpdateClinica(@PathVariable Integer id, @RequestBody Clinica clinica) {
-        clinicaRepository.findById(id).map(c -> {
-            clinica.setId(c.getId());
-            clinicaRepository.save(clinica);
-            return c;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    @ApiOperation(value="Atualiza um Clinica por ID.")
+    public void UpdateClinica(@PathVariable Integer id, @RequestBody @Valid Clinica clinica) {
+        clinicaService.atualizar(id, clinica);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value="Deleta uma Clinica por ID")
-    public void UpdateClinica(@PathVariable Integer id) {
-        clinicaRepository.findById(id).map(clinica -> {
-            clinicaRepository.delete(clinica);
-            return clinicaRepository;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    @ApiOperation(value="Deleta uma Clinica por ID.")
+    public void DeleteClinica(@PathVariable Integer id) {
+       clinicaService.deletar(id);
     }
 
 }
