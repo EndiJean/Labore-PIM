@@ -35,8 +35,7 @@ public class SwaggerConfig {
                 "API para laboratorios.",
                 "1.0",
                 "Terms of Service",
-                new Contact("Endi Jean", "github.com/EndiJean",
-                        "endijean91@gmail.com"),
+                new Contact("Nome", "github","@gmail.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
         );

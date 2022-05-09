@@ -29,4 +29,8 @@ public class Anexo {
     @Column(name = "col_link")
     private String link;
     
+    @ManyToOne()
+    @JoinColumn(name = "id_geral")
+    private Geral geral;
+    
 }
