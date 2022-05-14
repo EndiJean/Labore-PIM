@@ -16,7 +16,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_geral")
@@ -27,10 +26,10 @@ public class Geral {
     @Column(name = "id_geral")
     private Integer id;
 
-    private Integer hora;
+    private String hora;
 
     @Column(name = "col_data")
-    private Integer data;
+    private String data;
 
     private String status;
 
@@ -60,4 +59,17 @@ public class Geral {
     @JoinColumn(name="id_anexo")
     private List<Anexo> anexos;
     */
+
+    public Geral(Integer id, String hora, String data, String status, Exame exame, Paciente paciente, Clinica clinica, Medico medico) {
+        this.id = id;
+        this.hora = hora;
+        this.data = data;
+        this.status = status;
+        this.exame = exame;
+        this.paciente = paciente;
+        this.clinica = clinica;
+        this.medico = medico;
+    }
+    
+    
 }

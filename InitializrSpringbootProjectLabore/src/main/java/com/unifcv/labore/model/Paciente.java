@@ -29,7 +29,7 @@ public class Paciente {
     private String cpf;
     
     @Column(name="data_nascimento")
-    private Integer dataNascimeto;
+    private String dataNascimeto;
     
     private Character sexo;
     

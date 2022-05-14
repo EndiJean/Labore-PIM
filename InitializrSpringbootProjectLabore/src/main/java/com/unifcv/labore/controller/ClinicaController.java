@@ -46,7 +46,7 @@ public class ClinicaController {
     }
 
     //OK
-    @GetMapping("/")
+    @GetMapping("")
     @ApiOperation(value="Retorna uma Lista de Clínicas.")
     public List<Clinica> findAll() {
         return clinicaService.listar();

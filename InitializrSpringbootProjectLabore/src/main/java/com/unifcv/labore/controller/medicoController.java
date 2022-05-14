@@ -41,7 +41,7 @@ public class medicoController {
         return medicoService.procurarPorNome(nome).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nome Não Encontrado."));
     }
     
-    @GetMapping("/")
+    @GetMapping("")
     @ApiOperation(value="retorna uma Lista de Medicos.")
     public List<Medico> findAll(){
         return medicoService.Listar();

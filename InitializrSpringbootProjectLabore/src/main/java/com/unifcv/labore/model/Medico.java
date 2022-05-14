@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,12 +34,13 @@ public class Medico {
     
     @Column(name = "data_nascimento", nullable = false)
     @NotEmpty(message="O campo Data de Nascimento deve ser preenchido.")
-    private Integer dataNascimento;
+    private String dataNascimento;
 
     private Character sexo;
 
     @Column(nullable = false)
     @NotEmpty(message="O campo Senha deve ser preenchido.")
     private String senha;
-
+   
+    
 }
