@@ -14,10 +14,20 @@ public class GeralServiceImpl implements GeralService{
     @Autowired
     GeralRepository geralRepository;
     
-    /*
     @Override
-    public Optional<Geral> listar(Integer id) {
-        return geralRepository.findGeral(id);
+    public Optional<Geral> ProcurarPorId(Integer id) {
+        return geralRepository.findById(id);
     }
-    */
+    
+    @Override
+    public List<Geral> listar() {
+        return geralRepository.findAll();
+    }
+
+    @Override
+    public Geral salvar(Geral geral) {
+        return geralRepository.save(geral);
+    }
+
+    
 }

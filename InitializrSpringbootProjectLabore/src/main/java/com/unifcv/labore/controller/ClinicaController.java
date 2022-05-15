@@ -1,12 +1,10 @@
 package com.unifcv.labore.controller;
 
 import com.unifcv.labore.model.Clinica;
-import com.unifcv.labore.repository.ClinicaRepository;
 import com.unifcv.labore.service.ClinicaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
-import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

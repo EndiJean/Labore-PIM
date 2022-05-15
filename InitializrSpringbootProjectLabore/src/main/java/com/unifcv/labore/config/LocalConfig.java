@@ -11,6 +11,8 @@ import com.unifcv.labore.repository.ExameRepository;
 import com.unifcv.labore.repository.GeralRepository;
 import com.unifcv.labore.repository.MedicoRepository;
 import com.unifcv.labore.repository.PacienteRepository;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -30,8 +32,8 @@ public class LocalConfig {
     @Autowired
     private ExameRepository exameRepository;
     
-    //@Autowired
-    //private GeralRepository geralRepository;
+    @Autowired
+    private GeralRepository geralRepository;
     
     @Autowired
     private MedicoRepository medicoRepository;
@@ -53,10 +55,21 @@ public class LocalConfig {
         Exame e1 = new Exame(null, "TIPO-1", "DESCRICAO-1");
         Exame e2 = new Exame(null, "TIPO-2", "DESCRICAO-2");
         
-        clinicaRepository.saveAll(List.of(c1, c2));
-        medicoRepository.saveAll(List.of(m1, m2));
-        pacienteRepository.saveAll(List.of(p1, p2));
-        exameRepository.saveAll(List.of(e1, e2));
+        Geral g1 = new Geral(null, "11:11", "01/01/1111", "STATUS",
+                new Exame(null, "TIPO-1", "DESCRICAO-1"),
+                new Paciente(null, "PACIENTE-1", "111", "01/01/1111", 'M', "senha"),
+                new Clinica(null, "CLINICA-1", "1010", "ENDERECO-1"),
+                new Medico(null, "MEDICO-1", "111", "01/01/1111", 'M', "senha")
+        );
+        
+        Geral g2 = new Geral(null, "11:11", "01/01/1111", "STATUS",
+                e2, p2, c2, m2);
+        
+        //clinicaRepository.saveAll(List.of(c1, c2));
+        //medicoRepository.saveAll(List.of(m1, m2));
+        //pacienteRepository.saveAll(List.of(p1, p2));
+        //exameRepository.saveAll(List.of(e1, e2));
+        geralRepository.saveAll(List.of(g1, g2));
     }
     
 }

@@ -1,7 +1,7 @@
 package com.unifcv.labore.model;
 
-import java.nio.MappedByteBuffer;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_geral")
 public class Geral {
@@ -33,43 +34,31 @@ public class Geral {
 
     private String status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_exame")
     private Exame exame;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_clinica")
     private Clinica clinica;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_medico")
     private Medico medico;
 
-    
-   /* @OneToMany
+    /*
+    @OneToMany
     @JoinColumn(name = "id_anexo")
     private List<Anexo> anexos; 
     
-    
+   /*
     @ManyToOne
     @JoinColumn(name="id_anexo")
     private List<Anexo> anexos;
     */
-
-    public Geral(Integer id, String hora, String data, String status, Exame exame, Paciente paciente, Clinica clinica, Medico medico) {
-        this.id = id;
-        this.hora = hora;
-        this.data = data;
-        this.status = status;
-        this.exame = exame;
-        this.paciente = paciente;
-        this.clinica = clinica;
-        this.medico = medico;
-    }
-    
     
 }
