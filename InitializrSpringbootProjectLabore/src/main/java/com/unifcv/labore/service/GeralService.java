@@ -11,5 +11,4 @@ public interface GeralService {
     public List<Geral> listar();
 
     public Geral salvar(Geral geral);
-
 }

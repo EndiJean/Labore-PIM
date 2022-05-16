@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CPF;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Medico {
 
     @Column(name="cpf", length = 11, nullable = false)
     @NotEmpty(message="O campo CPF deve ser preenchido.")
+    //@CPF(message = "Informe um CPF valido")
     private String cpf;
     
     @Column(name = "data_nascimento", nullable = false)

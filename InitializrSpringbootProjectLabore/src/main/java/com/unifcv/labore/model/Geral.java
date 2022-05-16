@@ -50,8 +50,7 @@ public class Geral {
     @JoinColumn(name = "id_medico")
     private Medico medico;
 
-    /*
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_anexo")
     private List<Anexo> anexos; 
     

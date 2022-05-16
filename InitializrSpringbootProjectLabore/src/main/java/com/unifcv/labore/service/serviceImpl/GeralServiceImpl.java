@@ -28,6 +28,5 @@ public class GeralServiceImpl implements GeralService{
     public Geral salvar(Geral geral) {
         return geralRepository.save(geral);
     }
-
     
 }
