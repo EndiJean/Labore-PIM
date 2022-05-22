@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,13 +23,13 @@ public class Clinica {
     @Column(name = "id_clinica")
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name="nome")
     private String nome;
 
-    @Column(name="cnpj", length = 25, nullable = false)
+    @Column(name="cnpj")
     private String cnpj;
 
-    @Column(nullable = false)
+    @Column(name="endereco")
     private String endereco;
     
 }

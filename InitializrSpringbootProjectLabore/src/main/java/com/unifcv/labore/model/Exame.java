@@ -22,7 +22,7 @@ public class Exame {
     @Column(name = "id_exame")
     private Integer id;
 
-    @Column(name = "tipo_exame", nullable = false)
+    @Column(name = "tipo_exame")
     private String tipoExame;
 
     @Column(name = "descricao")

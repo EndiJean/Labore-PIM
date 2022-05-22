@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CPF;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,18 +24,20 @@ public class Medico {
     @Column(name = "id_medico")
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name="cpf", length = 11, nullable = false)
+    @Column(name="cpf")
     private String cpf;
     
-    @Column(name = "data_nascimento", nullable = false)
-    private Integer dataNascimento;
+    @Column(name = "data_nascimento")
+    private String dataNascimento;
 
-    private Character sexo;
+    @Column(name = "sexo")
+    private char sexo;
 
-    @Column(nullable = false)
+    @Column(name = "senha")
     private String senha;
-
+   
+    
 }
