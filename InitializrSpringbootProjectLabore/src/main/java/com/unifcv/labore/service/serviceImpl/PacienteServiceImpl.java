@@ -3,6 +3,7 @@ package com.unifcv.labore.service.serviceImpl;
 import com.unifcv.labore.model.Paciente;
 import com.unifcv.labore.repository.PacienteRepository;
 import com.unifcv.labore.service.PacienteService;
+import com.unifcv.labore.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,15 @@ public class PacienteServiceImpl implements PacienteService{
     PacienteRepository pacienteRepository;
     
     @Override
-    public Optional<Paciente> procurarPorId(Integer id) {
-        return pacienteRepository.findById(id);
+    public Paciente procurarPorId(Integer id) {
+         Optional<Paciente> paciente = pacienteRepository.findById(id);
+        return paciente.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
     }
 
     @Override
-    public Optional<Paciente> procurarPorNome(String nome) {
-        return pacienteRepository.findByNome(nome);
+    public Paciente procurarPorNome(String nome) {
+        Optional<Paciente> paciente = pacienteRepository.findByNome(nome);
+        return paciente.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
     }
 
     @Override

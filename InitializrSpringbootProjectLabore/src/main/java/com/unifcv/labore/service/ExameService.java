@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface ExameService {
     
-    public Optional<Exame> procurarPorId(Integer id);
+    public Exame procurarPorId(Integer id);
     
     List<Exame> listar();
     

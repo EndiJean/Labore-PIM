@@ -24,23 +24,19 @@ public class Medico {
     @Column(name = "id_medico")
     private Integer id;
 
-    @Column(nullable = false)
-    @NotEmpty(message="O campo Nome deve ser preenchido.")
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name="cpf", length = 11, nullable = false)
-    @NotEmpty(message="O campo CPF deve ser preenchido.")
-    //@CPF(message = "Informe um CPF valido")
+    @Column(name="cpf")
     private String cpf;
     
-    @Column(name = "data_nascimento", nullable = false)
-    @NotEmpty(message="O campo Data de Nascimento deve ser preenchido.")
+    @Column(name = "data_nascimento")
     private String dataNascimento;
 
-    private Character sexo;
+    @Column(name = "sexo")
+    private char sexo;
 
-    @Column(nullable = false)
-    @NotEmpty(message="O campo Senha deve ser preenchido.")
+    @Column(name = "senha")
     private String senha;
    
     

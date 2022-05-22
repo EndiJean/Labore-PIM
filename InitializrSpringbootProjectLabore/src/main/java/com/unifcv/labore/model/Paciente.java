@@ -22,18 +22,19 @@ public class Paciente {
     @Column(name = "id_paciente")
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name="nome")
     private String nome;
     
-    @Column(name="cpf", length = 11, nullable = false)
+    @Column(name="cpf")
     private String cpf;
     
     @Column(name="data_nascimento")
     private String dataNascimeto;
     
-    private Character sexo;
+    @Column(name="sexo")
+    private char sexo;
     
-    @Column(nullable = false)
+    @Column(name="senha")
     private String senha;
     
 }

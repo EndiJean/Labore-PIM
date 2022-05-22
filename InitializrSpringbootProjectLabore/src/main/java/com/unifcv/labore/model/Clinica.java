@@ -20,19 +20,16 @@ public class Clinica {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_clinica", nullable = false)
+    @Column(name = "id_clinica")
     private Integer id;
 
-    @Column( nullable = false)
-    @NotEmpty(message="O campo Nome deve ser preenchido.")
+    @Column(name="nome")
     private String nome;
 
-    @Column(name="cnpj", length = 25, nullable = false)
-    @NotEmpty(message="O campo Cnpj deve ser preenchido.")
+    @Column(name="cnpj")
     private String cnpj;
 
-    @Column( nullable = false)
-    @NotEmpty(message="O campo Endereço deve ser preenchido.")
+    @Column(name="endereco")
     private String endereco;
     
 }

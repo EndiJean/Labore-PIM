@@ -6,9 +6,9 @@ import java.util.Optional;
 
 public interface ClinicaService {
     
-    public Optional<Clinica> procurarPorId(Integer id);
+    public Clinica procurarPorId(Integer id);
     
-    public Optional<Clinica> procurarPorNome(String nome);
+    public Clinica procurarPorNome(String nome);
     
     public List<Clinica> listar();
     

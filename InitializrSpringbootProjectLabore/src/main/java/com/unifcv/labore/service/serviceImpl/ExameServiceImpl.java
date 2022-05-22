@@ -3,6 +3,7 @@ package com.unifcv.labore.service.serviceImpl;
 import com.unifcv.labore.model.Exame;
 import com.unifcv.labore.repository.ExameRepository;
 import com.unifcv.labore.service.ExameService;
+import com.unifcv.labore.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,9 @@ public class ExameServiceImpl implements ExameService {
     ExameRepository exameRepository;
 
     @Override
-    public Optional<Exame> procurarPorId(Integer id) {
-        return exameRepository.findById(id);
+    public Exame procurarPorId(Integer id) {
+        Optional<Exame> exame = exameRepository.findById(id);
+        return exame.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
     }
 
     @Override

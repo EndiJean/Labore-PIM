@@ -1,7 +1,7 @@
 package com.unifcv.labore.controller;
 
-import com.unifcv.labore.model.Geral;
-import com.unifcv.labore.service.GeralService;
+import com.unifcv.labore.model.Anexo;
+import com.unifcv.labore.service.AnexoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
@@ -19,44 +19,45 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/unifcv/geral")
-@Api(value = "Labore+ API - Geral")
+@RequestMapping("/unifcv/anexo")
+@Api(value = "Labore+ API - Anexo")
 @CrossOrigin(origins = "*")
-public class GeralController {
+public class AnexoController {
 
     @Autowired
-    GeralService geralService;
+    private AnexoService anexoService;
 
     @GetMapping("/{id}")
-    @ApiOperation(value = "Retorna um Geral por ID.")
-    public Geral findById(@PathVariable Integer id) {
-        return geralService.ProcurarPorId(id);
+    @ApiOperation(value = "Retorna um Anexo por ID.")
+    public Anexo findById(@PathVariable Integer id) {
+        return anexoService.procurarPorId(id);
     }
 
     @GetMapping("/all")
-    @ApiOperation(value = "Retorna uma Lista de Geral.")
-    public List<Geral> findAll() {
-        return geralService.listar();
+    @ApiOperation(value = "Retorna uma Lista de Anexo.")
+    public List<Anexo> findAll() {
+        return anexoService.listar();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @ApiOperation(value = "Salva uma Geral.")
-    public Geral saveGeral(@RequestBody Geral geral) {
-        return geralService.salvar(geral);
+    @ApiOperation(value = "Salva um Anexo.")
+    public Anexo SaveClinica(@RequestBody Anexo anexo) {
+        return anexoService.salvar(anexo);
     }
-    
+
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza um Anexo por ID.")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value = "Atualiza um Geral por ID.")
-    public void UpdateGeral(@PathVariable Integer id, @RequestBody Geral geral) {
-        geralService.atualizar(id, geral);
+    public void updateAnexo(@PathVariable Integer id, @RequestBody Anexo anexo) {
+        anexoService.atualizar(id, anexo);
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Deleta uma Anexo por ID.")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value = "Deleta um Geral por ID.")
-    public void DeleteGeral(@PathVariable Integer id) {
-        geralService.deletar(id);
+    public void deleteAnexo(@PathVariable Integer id) {
+        anexoService.deletar(id);
     }
+
 }

@@ -6,9 +6,13 @@ import java.util.Optional;
 
 public interface GeralService {
     
-    public Optional<Geral> ProcurarPorId(Integer id);
+    public Geral ProcurarPorId(Integer id);
     
     public List<Geral> listar();
 
     public Geral salvar(Geral geral);
+    
+    public void atualizar(Integer id, Geral geral);
+    
+    public void deletar(Integer id);
 }
