@@ -18,15 +18,14 @@ public class ClinicaServiceImpl implements ClinicaService{
     @Override
     public Clinica procurarPorId(Integer id) {
         Optional<Clinica> clinica = clinicaRepository.findById(id);
-        return clinica.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        return clinica.orElseThrow(() -> new ObjectNotFoundException("ID " + id +" não encontrado! Infome um ID válido."));
     }
     
     @Override
-    public Clinica procurarPorNome(String nome) {
-        Optional<Clinica> clinica = clinicaRepository.findByNome(nome);
-        return clinica.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+    public List<Clinica> ListarNomeLike(String nome) {
+       return clinicaRepository.findByNomeLike(nome +"%");
     }
-
+    
     @Override
     public List<Clinica> listar() {
         return clinicaRepository.findAll();

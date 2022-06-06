@@ -8,6 +8,8 @@ public interface ExameService {
     
     public Exame procurarPorId(Integer id);
     
+    public List<Exame> ListarTipoExameLike(String tipoExame);
+    
     List<Exame> listar();
     
     Exame salvar(Exame exame);

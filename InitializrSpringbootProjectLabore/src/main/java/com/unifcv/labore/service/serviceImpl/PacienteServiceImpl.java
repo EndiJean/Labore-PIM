@@ -10,21 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PacienteServiceImpl implements PacienteService{
+public class PacienteServiceImpl implements PacienteService {
 
     @Autowired
     PacienteRepository pacienteRepository;
-    
+
     @Override
     public Paciente procurarPorId(Integer id) {
-         Optional<Paciente> paciente = pacienteRepository.findById(id);
-        return paciente.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        Optional<Paciente> paciente = pacienteRepository.findById(id);
+        return paciente.orElseThrow(() -> new ObjectNotFoundException("ID " + id + " não encontrado! Infome um ID válido."));
     }
 
     @Override
-    public Paciente procurarPorNome(String nome) {
-        Optional<Paciente> paciente = pacienteRepository.findByNome(nome);
-        return paciente.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+    public List<Paciente> ListarCpfLike(String cpf) {
+        return pacienteRepository.findByCpfLike(cpf +"%");
     }
 
     @Override
@@ -39,7 +38,7 @@ public class PacienteServiceImpl implements PacienteService{
 
     @Override
     public void atualizar(Integer id, Paciente paciente) {
-        pacienteRepository.findById(id).map( p -> {
+        pacienteRepository.findById(id).map(p -> {
             p.setNome(paciente.getNome());
             p.setCpf(paciente.getCpf());
             p.setDataNascimeto(paciente.getDataNascimeto());
@@ -53,5 +52,5 @@ public class PacienteServiceImpl implements PacienteService{
     public void deletar(Integer id) {
         pacienteRepository.deleteById(id);
     }
-    
+
 }

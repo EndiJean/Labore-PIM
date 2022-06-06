@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 public class Exame {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_exame")
     private Integer id;
 

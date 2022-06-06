@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 public class Anexo {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_anexo")
     private Integer id;
 

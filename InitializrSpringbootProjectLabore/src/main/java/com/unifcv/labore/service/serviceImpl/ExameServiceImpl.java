@@ -18,7 +18,12 @@ public class ExameServiceImpl implements ExameService {
     @Override
     public Exame procurarPorId(Integer id) {
         Optional<Exame> exame = exameRepository.findById(id);
-        return exame.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        return exame.orElseThrow(() -> new ObjectNotFoundException("ID " + id +" não encontrado! Infome um ID válido."));
+    }
+    
+    @Override
+    public List<Exame> ListarTipoExameLike(String tipoExame) {
+       return exameRepository.findByTipoExameLike(tipoExame +"%");
     }
 
     @Override

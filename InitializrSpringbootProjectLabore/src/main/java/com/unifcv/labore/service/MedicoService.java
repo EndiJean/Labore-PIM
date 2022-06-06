@@ -8,7 +8,7 @@ public interface MedicoService {
     
     public Medico procurarPorId(Integer id);
     
-    public Medico procurarPorNome (String nome);
+    public List<Medico> ListarNomeLike(String nome);
     
     public List<Medico> Listar();
     

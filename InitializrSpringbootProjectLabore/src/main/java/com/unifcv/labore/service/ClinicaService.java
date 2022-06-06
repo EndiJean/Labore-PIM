@@ -8,7 +8,7 @@ public interface ClinicaService {
     
     public Clinica procurarPorId(Integer id);
     
-    public Clinica procurarPorNome(String nome);
+    public List<Clinica> ListarNomeLike(String nome);
     
     public List<Clinica> listar();
     

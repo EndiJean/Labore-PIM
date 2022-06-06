@@ -5,6 +5,7 @@ import com.unifcv.labore.service.MedicoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,22 +35,22 @@ public class medicoController {
         return medicoService.procurarPorId(id);
     }
 
-    @GetMapping("/nome/{nome}")
-    @ApiOperation(value = "Retorna um Medico por Nome.")
-    public Medico findByNome(@PathVariable String nome) {
-        return medicoService.procurarPorNome(nome);
-    }
-
     @GetMapping("/all")
     @ApiOperation(value = "retorna uma Lista de Medicos.")
     public List<Medico> findAll() {
         return medicoService.Listar();
     }
+    
+    @GetMapping("/filter")
+    @ApiOperation(value = "Retorna uma Lista de Medico com filtro em Nome.")
+    public List<Medico> findByLikeCpf(@RequestParam("nome") String nome) {
+        return medicoService.ListarNomeLike(nome);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "Salva um Medico.")
-    public Medico SaveMedico(@RequestBody Medico medico) {
+    public Medico SaveMedico(@RequestBody @Valid Medico medico) {
         return medicoService.salvar(medico);
     }
 

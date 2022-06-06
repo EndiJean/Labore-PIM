@@ -20,7 +20,7 @@ public class GeralServiceImpl implements GeralService{
     @Override
     public Geral ProcurarPorId(Integer id) {
         Optional<Geral> geral = geralRepository.findById(id);
-        return geral.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        return geral.orElseThrow(() -> new ObjectNotFoundException("ID " + id +" não encontrado! Infome um ID válido."));
     }
     
     @Override

@@ -8,7 +8,7 @@ public interface PacienteService {
     
     public Paciente procurarPorId(Integer id);
     
-    public Paciente procurarPorNome(String nome);
+    public List<Paciente> ListarCpfLike(String cpf);
     
     public List<Paciente> listar();
     

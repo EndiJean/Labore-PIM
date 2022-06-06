@@ -18,13 +18,12 @@ public class MedicoServiceImpl implements MedicoService{
     @Override
     public Medico procurarPorId(Integer id) {
         Optional<Medico> medico = medicoRepository.findById(id);
-        return medico.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        return medico.orElseThrow(() -> new ObjectNotFoundException("ID " + id +" não encontrado! Infome um ID válido."));
     }
-
+    
     @Override
-    public Medico procurarPorNome(String nome) {
-        Optional<Medico> medico = medicoRepository.findByNome(nome);
-        return medico.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+    public List<Medico> ListarNomeLike(String nome) {
+       return medicoRepository.findByNomeLike(nome +"%");
     }
 
     @Override
@@ -53,5 +52,4 @@ public class MedicoServiceImpl implements MedicoService{
     public void deletar(Integer id) {
         medicoRepository.deleteById(id);
     }
-    
 }

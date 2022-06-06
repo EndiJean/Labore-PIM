@@ -18,7 +18,7 @@ public class AnexoServiceImpl implements AnexoService{
     @Override
     public Anexo procurarPorId(Integer id) {
         Optional<Anexo> anexo = anexoRepository.findById(id);
-        return anexo.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
+        return anexo.orElseThrow(() -> new ObjectNotFoundException("ID " + id +" não encontrado! Infome um ID válido."));
     }
 
     @Override
