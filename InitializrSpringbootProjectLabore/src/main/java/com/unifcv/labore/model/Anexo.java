@@ -21,6 +21,7 @@ public class Anexo {
     
     @Id
     @Column(name = "id_anexo")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "col_link")

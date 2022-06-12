@@ -41,11 +41,10 @@ public class GeralServiceImpl implements GeralService{
             g.setHora(LocalTime.now());
             g.setData(LocalDate.now());
             g.setStatus(geral.getStatus());
-            g.setExame(geral.getExame());
+            g.setExames(geral.getExames());
             g.setPaciente(geral.getPaciente());
             g.setClinica(geral.getClinica());
             g.setMedico(geral.getMedico());
-            g.setAnexos(geral.getAnexos());
             return geralRepository.save(g);
         });
     }

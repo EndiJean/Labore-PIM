@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -24,6 +26,7 @@ public class Geral {
 
     @Id
     @Column(name = "id_geral")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "hora")
@@ -34,10 +37,6 @@ public class Geral {
 
     @Column(name = "status")
     private String status;  
-
-    @OneToOne
-    @JoinColumn(name = "id_exame", referencedColumnName = "id_exame")
-    private Exame exame;
 
     @OneToOne
     @JoinColumn(name = "id_paciente", referencedColumnName = "id_paciente")
@@ -53,5 +52,5 @@ public class Geral {
 
     @OneToMany
     @JoinColumn(name = "id_geral", referencedColumnName = "id_geral")
-    private List<Anexo> anexos = new ArrayList<>();     
+    private List<Exame> exames = new ArrayList<>();     
 }

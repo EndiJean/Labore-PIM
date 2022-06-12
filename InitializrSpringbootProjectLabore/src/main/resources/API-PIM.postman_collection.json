@@ -1,0 +1,748 @@
+{
+	"info": {
+		"_postman_id": "6a4449d0-277f-4dce-807c-073184e84c85",
+		"name": "API-PIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET/GERAL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/geral/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"geral",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/ANEXO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/anexo/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"anexo",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/CLINICA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/clinica/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"clinica",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/EXAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/exame/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"exame",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/MEDICO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/medico/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"medico",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/PACIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/paciente/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"paciente",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET/LIKE",
+			"item": [
+				{
+					"name": "GET/PACIENTE/LIKE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/paciente/filter?cpf=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"paciente",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "cpf",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/MEDICO/LIKE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/medico/filter?nome=A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"medico",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/EXAME/LIKE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/exame/filter?tipoExame=V",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"exame",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "tipoExame",
+									"value": "V"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/CLINICA/LIKE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/clinica/filter?nome=L",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"clinica",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "L"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "POST/CLINICA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Lab. Regius\",\r\n    \"cnpj\": \"37496636000186\",\r\n    \"endereco\": \"Rua Petrônio Portela 930\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/clinica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"clinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/MEDICO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Barbara das Neves\",\r\n    \"cpf\": \"08678089938\",\r\n    \"dataNascimento\": \"16/03/1993\",\r\n    \"sexo\": \"F\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/PACIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedro Manuel dos Santos\",\r\n    \"cpf\": \"05510798270\",\r\n    \"dataNascimeto\": \"05/06/1978\",\r\n    \"sexo\": \"M\",\r\n    \"senha\": \"123\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/paciente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/ANEXO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"link\": \"VitaminaB12.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/anexo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"anexo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/EXAME",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoExame\": \"Vitamina B12\",\r\n    \"descricao\": \"Teste vitamina B12\",\r\n        \"anexo\": {\r\n            \"id\": 1\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/exame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"exame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/GERAL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Completo\",\r\n        \r\n        \"paciente\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"clinica\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"medico\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"exames\": [\r\n            {\r\n            \"id\": 1    \r\n            },\r\n            {\r\n            \"id\": 2\r\n            }\r\n        ]     \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/geral",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"geral"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "PUT/CLINICA",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Lab. Regius\",\r\n    \"cnpj\": \"37496636000186\",\r\n    \"endereco\": \"Rua Petrônio Portela 931\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/clinica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"clinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT/MEDICO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Barbara das Neves\",\r\n    \"cpf\": \"08678089938\",\r\n    \"dataNascimento\": \"16/03/1993\",\r\n    \"sexo\": \"F\",\r\n    \"senha\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/medico/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"medico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT/PACIENTE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedro Manuel dos Santos\",\r\n    \"cpf\": \"05510798270\",\r\n    \"dataNascimeto\": \"05/06/1978\",\r\n    \"sexo\": \"M\",\r\n    \"senha\": \"12345\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/paciente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT/ANEXO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"link\": \"Vitamina.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/anexo/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"anexo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT/EXAME",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoExame\": \"Vitamina B12\",\r\n    \"descricao\": \"Teste vitamina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/exame/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"exame",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT/GERAL",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"status\": \"PENDENTE\",\r\n        \"paciente\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Pedro Alvez dos Santos\",\r\n            \"cpf\": \"05510798270\",\r\n            \"dataNascimeto\": \"05/06/1978\",\r\n            \"sexo\": \"M\",\r\n            \"senha\": \"12345\"\r\n        },\r\n        \"clinica\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Lab. Regius\",\r\n            \"cnpj\": \"37496636000186\",\r\n            \"endereco\": \"Rua Petrônio Portela 931\"\r\n        },\r\n        \"medico\": {\r\n            \"id\": 2,\r\n            \"nome\": \"Barbara das Neves\",\r\n            \"cpf\": \"08678089938\",\r\n            \"dataNascimento\": \"16/03/1993\",\r\n            \"sexo\": \"F\",\r\n            \"senha\": \"123\"\r\n        },\r\n        \"exames\": [\r\n            {\r\n                \"id\": 1,\r\n                \"tipoExame\": \"Vitamina\",\r\n                \"descricao\": \"Teste vitamina\",\r\n                \"anexo\": {\r\n                    \"id\": 1,\r\n                    \"link\": \"resultado.pdf\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 1,\r\n                \"tipoExame\": \"Vitamina B12\",\r\n                \"descricao\": \"Teste vitamina\",\r\n                \"anexo\": {\r\n                    \"id\": 1,\r\n                    \"link\": \"resultado.pdf\"\r\n                }\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/unifcv/geral/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"geral",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "DELETE/GERAL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/geral/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"geral",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE/EXAME",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/exame/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"exame",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE/ANEXO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/anexo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"anexo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE/PACIENTE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/paciente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE/MEDICO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/medico/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"medico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE/CLINICA",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/unifcv/clinica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"unifcv",
+								"clinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
