@@ -375,7 +375,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tipoExame\": \"Vitamina B12\",\r\n    \"descricao\": \"Teste vitamina B12\",\r\n        \"anexo\": {\r\n            \"id\": 1\r\n        }\r\n}",
+							"raw": "{\r\n    \"tipoExame\": \"Vitamina B12\",\r\n    \"descricao\": \"Teste vitamina B12\",\r\n        \"anexo\": {\r\n            \"id\": 4\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -404,7 +404,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": \"Completo\",\r\n        \r\n        \"paciente\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"clinica\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"medico\": {\r\n            \"id\": 1\r\n            },\r\n\r\n        \"exames\": [\r\n            {\r\n            \"id\": 1    \r\n            },\r\n            {\r\n            \"id\": 2\r\n            }\r\n        ]     \r\n}",
+							"raw": "{\r\n    \"status\": \"Completo\",\r\n        \r\n        \"paciente\": {\r\n            \"id\": 4\r\n            },\r\n\r\n        \"clinica\": {\r\n            \"id\": 4\r\n            },\r\n\r\n        \"medico\": {\r\n            \"id\": 4\r\n            },\r\n\r\n        \"exames\": [\r\n            {\r\n            \"id\": 4    \r\n            }\r\n        ]     \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
